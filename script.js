@@ -17,9 +17,9 @@ const CONFIG = {
     paragraphs: [
       "Kalau kamu sampai di halaman ini, berarti kamu udah berhasil lewatin semua jebakan kecil yang aku buat.",
       "Jujur, aku sebenarnya cuma ingin bilang satu hal. Aku bersyukur bisa kenal dan dekat sama kamu.",
-      "Semangat ya haidnya, di tahan kalau sakit perutnya cuman seminggu kok, aku juga bakal berusaha buat mood kamu bagus setiap hari.",
+      "Capek ya hari ini? keren kamu kagum + bangga aku liatnya kamu sehebat itu mau effort mau kerja, malam ini dan seterusnya kamu boleh ngeluh apa aja ke aku, aku bakalan dengerin semuanya.",
+      "Semangat juga ya haidnya sayangg, ditahan kalau lagi sakit perutnya omelin aku aja sepuas kamu gpp.",
       "Makasih juga udah mau berteman sama aku atau lebih?!? hehehe",
-      "Maaf yaa kalau aku mungkin belom sesuai sama cowo yang kamu harapin.",
       "Plisss jangan galak galak :).",
     ],
     closing: "Terima kasih udah jadi diri kamu sendiri. ❤️",
