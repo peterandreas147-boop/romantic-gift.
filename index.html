@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="A special romantic digital gift, made just for you.">
+  <title>For Someone Special ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Background Elements -->
+  <div class="bg-hearts" aria-hidden="true"></div>
+  <div class="bg-particles" aria-hidden="true"></div>
+
+  <!-- Music Toggle -->
+  <button class="music-toggle" id="musicToggle" aria-label="Toggle background music" title="Toggle music">
+    <span class="music-icon">🎵</span>
+    <span class="music-label">Music OFF</span>
+  </button>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music/our-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Main App Container -->
+  <main id="app">
+
+    <!-- 1. LANDING PAGE -->
+    <section class="screen active" id="screen-landing" data-screen="landing">
+      <div class="screen-content fade-in-sequence">
+        <p class="landing-greeting">Hii, Riveh Cantik... ❤️</p>
+        <p class="landing-line delay-1">aku bikin sesuatu buat kamu.</p>
+        <p class="landing-line delay-2">jangan kasih liat siapa siapa yaa. 👀</p>
+        <p class="landing-line delay-3">khusus buat cewe aku. ❤️</p>
+        <button class="btn-primary btn-glow" id="btnStart" data-action="start">
+          START THE SURPRISE 💌
+        </button>
+      </div>
+    </section>
+
+    <!-- 2. SECRET CODE -->
+    <section class="screen" id="screen-code" data-screen="code">
+      <div class="screen-content">
+        <p class="subtitle fade-in">Sebelum mulai...</p>
+        <h2 class="title fade-in delay-1">Ada passwordnya.</h2>
+        <p class="hint fade-in delay-2">cluenya hari dimana ibu kamu seneng banget ada manusia baru di hidup dia ❤️</p>
+        <form class="code-form fade-in delay-3" id="codeForm">
+          <input
+            type="password"
+            id="secretInput"
+            class="code-input"
+            placeholder="••••••"
+            autocomplete="off"
+            inputmode="numeric"
+            maxlength="20"
+            aria-label="Secret code"
+          >
+          <button type="submit" class="btn-primary">BUKA ❤️</button>
+        </form>
+        <p class="code-feedback" id="codeFeedback" role="alert" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- 3. ENVELOPE -->
+    <section class="screen" id="screen-envelope" data-screen="envelope">
+      <div class="screen-content">
+        <p class="subtitle fade-in">Buat Manusia Spesial</p>
+        <p class="hint fade-in delay-1">pencet bentuk love</p>
+        <div class="envelope-wrapper fade-in delay-2" id="envelopeWrapper">
+          <div class="envelope" id="envelope">
+            <div class="envelope-back"></div>
+            <div class="envelope-letter" id="envelopeLetter">
+              <div class="mini-letter">💌</div>
+            </div>
+            <div class="envelope-front"></div>
+            <div class="envelope-flap" id="envelopeFlap"></div>
+            <button class="wax-seal" id="waxSeal" aria-label="Open envelope seal">
+              <span>❤️</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FLOWERS -->
+    <section class="screen" id="screen-flowers" data-screen="flowers">
+      <div class="flower-bg" aria-hidden="true">
+        <div class="css-flower f1"></div>
+        <div class="css-flower f2"></div>
+        <div class="css-flower f3"></div>
+        <div class="css-flower f4"></div>
+        <div class="css-flower f5"></div>
+        <div class="petal-fall"></div>
+      </div>
+      <div class="screen-content">
+        <h2 class="title flower-title fade-in">
+          gatau alay apa engga tapi ini buat manusia cantik lucu gemes kampung nyebelin. 🌸
+        </h2>
+        <button class="btn-primary fade-in delay-2" id="btnOpenLetter" data-action="flowers-next">
+          BUKA 💌
+        </button>
+      </div>
+    </section>
+
+    <!-- 5. LOVE LETTER -->
+    <section class="screen" id="screen-letter" data-screen="letter">
+      <div class="screen-content letter-screen">
+        <h2 class="title fade-in">Sedikit surat buat kamu</h2>
+        <div class="letter-paper fade-in delay-1">
+          <div class="letter-paper-inner">
+            <p class="letter-dear" id="letterDear"></p>
+            <div class="letter-body" id="letterBody"></div>
+            <p class="letter-sign" id="letterSign"></p>
+          </div>
+        </div>
+        <button class="btn-primary hidden" id="btnLetterNext" data-action="letter-next">
+          Lanjut →
+        </button>
+      </div>
+    </section>
+
+    <!-- 6. MEMORY GALLERY -->
+    <section class="screen" id="screen-gallery" data-screen="gallery">
+      <div class="screen-content">
+        <h2 class="title fade-in">Isi Galeri Aku 📸</h2>
+        <div class="gallery-grid fade-in delay-1" id="galleryGrid"></div>
+        <button class="btn-primary fade-in delay-2" id="btnGalleryNext" data-action="gallery-next">
+          Lanjut →
+        </button>
+      </div>
+    </section>
+
+    <!-- 7. RELATIONSHIP DASHBOARD -->
+    <section class="screen" id="screen-stats" data-screen="stats">
+      <div class="screen-content">
+        <h2 class="title fade-in">LAPORAN 📊</h2>
+        <div class="dashboard fade-in delay-1" id="statsDashboard"></div>
+        <div class="error-box fade-in delay-2">
+          <p class="error-code">ERROR 404</p>
+          <p class="error-msg">Unable to find a reason to stop loving you.</p>
+        </div>
+        <button class="btn-primary fade-in delay-3" id="btnStatsNext" data-action="stats-next">
+          Lanjut →
+        </button>
+      </div>
+    </section>
+
+    <!-- 8. MINI INTERACTION -->
+    <section class="screen" id="screen-interaction" data-screen="interaction">
+      <div class="screen-content">
+        <h2 class="title fade-in">Pilih yang mau kamu kasih ke aku.</h2>
+        <div class="interaction-buttons fade-in delay-1">
+          <button class="btn-interaction" data-gift="hug">🫂 A Hug</button>
+          <button class="btn-interaction" data-gift="kiss">💋 A Kiss</button>
+        </div>
+        <p class="interaction-result hidden" id="interactionResult" role="status" aria-live="polite"></p>
+        <button class="btn-primary hidden" id="btnInteractionNext" data-action="interaction-next">
+          Continue →
+        </button>
+      </div>
+    </section>
+
+    <!-- 9. FINAL SURPRISE -->
+    <section class="screen" id="screen-surprise" data-screen="surprise">
+      <div class="screen-content">
+        <div id="surpriseIntro">
+          <p class="subtitle fade-in">Bentar...</p>
+          <p class="title fade-in delay-1">Ada satu lagi.</p>
+          <button class="btn-primary btn-glow fade-in delay-2" id="btnFinalSurprise">
+            ONE LAST SURPRISE ❤️
+          </button>
+        </div>
+        <div class="surprise-reveal hidden" id="surpriseReveal">
+          <p class="surprise-line" id="surpriseLine1">Kalau aku harus disuruh milih lagi...</p>
+          <p class="surprise-line hidden" id="surpriseLine2">Aku bakalan tetap milih kamu.</p>
+          <p class="surprise-line hidden" id="surpriseLine3">Sampai waktu yang gabisa ditentukan. ❤️</p>
+          <p class="surprise-line hidden" id="surpriseLine4">Thank you udah mau deket sama aku.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. ENDING -->
+    <section class="screen" id="screen-ending" data-screen="ending">
+      <div class="screen-content ending-content">
+        <p class="ending-from fade-in"> From Me, To You</p>
+        <h1 class="ending-title fade-in delay-1" id="endingTitle"></h1>
+        <p class="ending-made fade-in delay-2">Made with love, just for you.</p>
+        <div class="ending-hearts fade-in delay-3" aria-hidden="true">❤️ ✨ ❤️</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Photo Lightbox Modal -->
+  <div class="modal hidden" id="photoModal" role="dialog" aria-modal="true" aria-labelledby="modalCaption">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close photo">&times;</button>
+      <img src="" alt="" id="modalImage">
+      <p class="modal-caption" id="modalCaption"></p>
+    </div>
+  </div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
