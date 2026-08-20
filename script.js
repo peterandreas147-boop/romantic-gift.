@@ -6,7 +6,7 @@
 const CONFIG = {
   partnerName: "RIVEHH",
   yourName: "Piterr",
-  secretCode: "riveh",
+  secretCode: "060826",
 
   occasion: "JUST BECAUSE", // ANNIVERSARY | BIRTHDAY | JUST BECAUSE
   occasionLabel: "LsdOahdVeadEuiyU ", // e.g. "Happy Anniversary ❤️"
